@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <table>
+            <tr>
+                <th>id</th>
+                <th>Projects</th>
+                <th>Descripition</th>
+                <th>Votes Total</th>
+                <th>Votes Ratio</th>
+                <th>Criado</th>
+                <th>Action</th>
+            </tr>
+
+            {% for p in projects %}
+            <tr>
+                <td>{{p.id}}</td>
+                <td>{{p.title}}</td>
+                <td>{{p.description}}</td>
+                <td>{{p.vote_total}}</th>
+                <td>{{p.vote_ratio}}%</th>
+                <td>{{p.is_created}}</th>
+                <td><a href="{% url 'single_project' p.id %}">View</a></th>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

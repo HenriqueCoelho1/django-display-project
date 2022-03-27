@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <hr>
+        {% for tag in project.tags.all %}
+        <span style="border:1px solid grey">{{tag}}</span>
+        {% endfor %}
+        <hr>
+    </div>
+</div>
+{% endblock %}
